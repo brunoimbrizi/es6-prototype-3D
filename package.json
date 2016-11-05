@@ -1,8 +1,7 @@
 {
-  "name": "name",
+  "name": "es6-prototype-3D",
   "version": "1.0.0",
-  "description": "",
-  "main": "main.js",
+  "author": "Bruno Imbrizi",
   "dependencies": {
     "babel-polyfill": "^6.7.4",
     "controlkit": "^0.1.9",
@@ -17,8 +16,11 @@
     "babelify": "^7.2.0",
     "browser-sync": "^2.11.1",
     "browserify": "^13.0.0",
-    "eslint-plugin-react": "^4.2.1",
+    "glslify": "^6.0.1",
+    "gulp": "^3.9.1",
     "npm-run-all": "^1.5.2",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0",
     "watchify": "^3.7.0"
   },
   "babel": {
@@ -26,18 +28,21 @@
       "es2015"
     ]
   },
-  "scripts": {
-    "build": "babel src/scripts -d dist/scripts",
-    "dev": "npm-run-all --parallel dev:scripts dev:vendors serve",
-    "serve": "browser-sync start --server dist --files dist/styles/*.css, dist/*.html, dist/scripts/*.js",
-    "dev:scripts": "watchify ./src/scripts/main.js -t babelify --outfile ./dist/scripts/main.js",
-    "dev:vendors": "watchify ./src/scripts/vendor.js --outfile ./dist/scripts/vendor.js"
+  "browserify": {
+    "transform": [
+      [
+        "babelify",
+        {
+          "presets": [
+            "es2015"
+          ]
+        }
+      ],
+      "glslify"
+    ]
   },
   "repository": {
     "type": "git",
     "url": ""
-  },
-  "author": "",
-  "license": "ISC",
-  "homepage": ""
+  }
 }

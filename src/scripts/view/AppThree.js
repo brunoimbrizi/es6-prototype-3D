@@ -1,3 +1,5 @@
+const glslify = require('glslify');
+
 export default class AppThree {
 
 	constructor(view) {
@@ -35,7 +37,14 @@ export default class AppThree {
 	initObject() {
 		const geometry = new THREE.BoxGeometry(200, 200, 200);
 		// const geometry = new THREE.PlaneGeometry(400, 400, 20, 20);
-		const material = new THREE.MeshBasicMaterial({ color: 0x444444, wireframe: true });
+
+		const material = new THREE.ShaderMaterial({
+			uniforms: {},
+			vertexShader: glslify('../../shaders/default.vert'),
+			fragmentShader: glslify('../../shaders/default.frag'),
+			wireframe: true
+		});
+
 		const mesh = new THREE.Mesh(geometry, material);
 		this.scene.add(mesh);
 	}
@@ -62,8 +71,5 @@ export default class AppThree {
 		this.camera.updateProjectionMatrix();;
 
 		this.renderer.setSize(this.view.sketch.width, this.view.sketch.height);
-
-		this.hw = this.view.sketch.width * .5;
-		this.hh = this.view.sketch.height * .5;
 	}
 }

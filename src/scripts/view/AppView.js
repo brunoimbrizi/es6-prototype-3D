@@ -37,7 +37,7 @@ export default class AppView {
 			this.three.resize();
 		};
 
-		this.sketch.touchstart = (e) => {
+		this.sketch.touchstart = () => {
 			const touch = this.sketch.touches[0];
 		};
 
