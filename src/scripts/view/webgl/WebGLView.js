@@ -1,6 +1,6 @@
 const glslify = require('glslify');
 
-export default class AppThree {
+export default class WebGLView {
 
 	constructor(view) {
 		this.view = view;
@@ -40,8 +40,8 @@ export default class AppThree {
 
 		const material = new THREE.ShaderMaterial({
 			uniforms: {},
-			vertexShader: glslify('../../shaders/default.vert'),
-			fragmentShader: glslify('../../shaders/default.frag'),
+			vertexShader: glslify('../../../shaders/default.vert'),
+			fragmentShader: glslify('../../../shaders/default.frag'),
 			wireframe: true
 		});
 
