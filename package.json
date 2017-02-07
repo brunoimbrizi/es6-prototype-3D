@@ -8,7 +8,7 @@
     "gsap": "^1.18.2",
     "npm-run-all": "^3.1.1",
     "sketch-js": "^1.1.1",
-    "three": "^0.82.1"
+    "three": "^0.84.0"
   },
   "devDependencies": {
     "babel-cli": "^6.6.0",
