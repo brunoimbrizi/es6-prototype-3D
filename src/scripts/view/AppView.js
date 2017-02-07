@@ -1,3 +1,5 @@
+import Sketch from 'sketch-js';
+
 import WebGLView from './webgl/WebGLView';
 import UIView from './ui/UIView';
 
@@ -33,9 +35,6 @@ export default class AppView {
 		};
 
 		this.sketch.resize = () => {
-			this.hw = this.sketch.width * 0.5;
-			this.hh = this.sketch.height * 0.5;
-
 			this.webgl.resize();
 		};
 
