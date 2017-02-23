@@ -52,6 +52,9 @@ export default class AppView {
 	}
 
 	initWebGL() {
+		// move canvas to container
+		document.querySelector('#container').appendChild(this.renderer.domElement);
+		
 		this.webgl = new WebGLView(this);
 	}
 
