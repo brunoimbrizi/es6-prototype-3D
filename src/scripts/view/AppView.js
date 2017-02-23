@@ -27,11 +27,13 @@ export default class AppView {
 		};
 
 		this.sketch.update = () => {
+			// this.ui.stats.begin();
 			this.webgl.update();
 		};
 
 		this.sketch.draw = () => {
 			this.webgl.draw();
+			// this.ui.stats.end();
 		};
 
 		this.sketch.resize = () => {

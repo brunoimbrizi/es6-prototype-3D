@@ -1,3 +1,6 @@
+import ControlKit from 'controlkit';
+import Stats from 'stats.js';
+
 export default class UIView {
 
 	constructor(view) {
@@ -6,16 +9,23 @@ export default class UIView {
 		this.range = [0, 1];
 
 		this.initControlKit();
+		// this.initStats();
 	}
 
 	initControlKit() {
 		const that = this;
 
 		this.controlKit = new ControlKit();
-		this.controlKit.addPanel({ width: 300 })
+		this.controlKit.addPanel({ width: 300, enable: false })
 
-		// .addGroup({label: 'Audio', enable: false })
-		// .addSlider(this, 'smoothing', 'range', { onChange: () => { that.onAudioChange(); } })
-		// .addCheckbox(this, 'freeCamera', { onChange: () => { that.onThreeChange(); } })
+		.addGroup({label: 'Camera', enable: true })
+		// .addSlider(this, 'camX', 'rangeCam', { label: 'x', onChange: () => { that.onCameraChange(); } })
+		// .addCheckbox(this, 'camStoryboard', { label: 'storyboard', onChange: () => { that.onCameraChange(); } })
+	}
+
+	initStats() {
+		this.stats = new Stats();
+
+		document.body.appendChild(this.stats.dom);
 	}
 }
