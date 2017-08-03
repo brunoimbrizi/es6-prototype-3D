@@ -68,7 +68,7 @@ export default class WebGLView {
 	resize() {
 		if (!this.renderer) return;
 		this.camera.aspect = this.view.sketch.width / this.view.sketch.height;
-		this.camera.updateProjectionMatrix();;
+		this.camera.updateProjectionMatrix();
 
 		this.renderer.setSize(this.view.sketch.width, this.view.sketch.height);
 	}
