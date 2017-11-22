@@ -1,4 +1,6 @@
 const glslify = require('glslify');
+import * as THREE from 'three';
+import TrackballControls from 'three-trackballcontrols';
 
 export default class WebGLView {
 
@@ -21,7 +23,7 @@ export default class WebGLView {
 	}
 
 	initControls() {
-		this.controls = new THREE.TrackballControls(this.camera, this.renderer.domElement);
+		this.controls = new TrackballControls(this.camera, this.renderer.domElement);
 		this.controls.target.set(0, 0, 0);
 		this.controls.rotateSpeed = 2.0;
 		this.controls.zoomSpeed = 0.8;

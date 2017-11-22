@@ -1,55 +1,56 @@
 {
-	"name": "es6-prototype-3D",
-	"version": "1.0.0",
-	"author": "Bruno Imbrizi",
-	"scripts": {
-		"dev": "set NODE_ENV=development&& gulp",
-		"prod": "set NODE_ENV=production&& gulp"
-	},
-	"dependencies": {
-		"babel-polyfill": "^6.7.4",
-		"controlkit": "^0.1.9",
-		"gsap": "^1.18.2",
-		"npm-run-all": "^3.1.1",
-		"sketch-js": "^1.1.1",
-		"stats.js": "^0.17.0",
-		"three": "^0.85"
-	},
-	"devDependencies": {
-		"babel-cli": "^6.6.0",
-		"babel-preset-es2015": "^6.6.0",
-		"babelify": "^7.2.0",
-		"browser-sync": "^2.11.1",
-		"browserify": "^13.0.0",
-		"glslify": "^6.0.1",
-		"gulp": "^3.9.1",
-		"gulp-uglify": "^2.0.0",
-		"gulp-util": "^3.0.7",
-		"npm-run-all": "^1.5.2",
-		"vinyl-buffer": "^1.0.0",
-		"vinyl-source-stream": "^1.1.0",
-		"watchify": "^3.7.0"
-	},
-	"babel": {
-		"presets": [
-			"es2015"
-		]
-	},
-	"browserify": {
-		"transform": [
-			[
-				"babelify",
-				{
-					"presets": [
-						"es2015"
-					]
-				}
-			],
-			"glslify"
-		]
-	},
-	"repository": {
-		"type": "git",
-		"url": ""
-	}
+  "name": "es6-prototype-3D",
+  "version": "1.0.0",
+  "author": "Bruno Imbrizi",
+  "scripts": {
+    "dev": "set NODE_ENV=development&& gulp",
+    "prod": "set NODE_ENV=production&& gulp"
+  },
+  "dependencies": {
+    "babel-polyfill": "^6.7.4",
+    "controlkit": "^0.1.9",
+    "gsap": "^1.18.2",
+    "npm-run-all": "^3.1.1",
+    "sketch-js": "^1.1.1",
+    "stats.js": "^0.17.0",
+    "three": "^0.88.0",
+    "three-trackballcontrols": "0.0.6"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.6.0",
+    "babel-preset-es2015": "^6.6.0",
+    "babelify": "^7.2.0",
+    "browser-sync": "^2.11.1",
+    "browserify": "^13.0.0",
+    "glslify": "^6.0.1",
+    "gulp": "^3.9.1",
+    "gulp-uglify": "^2.0.0",
+    "gulp-util": "^3.0.7",
+    "npm-run-all": "^1.5.2",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0",
+    "watchify": "^3.7.0"
+  },
+  "babel": {
+    "presets": [
+      "es2015"
+    ]
+  },
+  "browserify": {
+    "transform": [
+      [
+        "babelify",
+        {
+          "presets": [
+            "es2015"
+          ]
+        }
+      ],
+      "glslify"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  }
 }
