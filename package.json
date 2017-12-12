@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "author": "Bruno Imbrizi",
   "scripts": {
-    "dev": "set NODE_ENV=development&& gulp",
-    "prod": "set NODE_ENV=production&& gulp"
+    "dev": "cross-env NODE_ENV=development gulp",
+    "prod": "cross-env NODE_ENV=production gulp"
   },
   "dependencies": {
     "babel-polyfill": "^6.7.4",
@@ -22,9 +22,10 @@
     "babelify": "^7.2.0",
     "browser-sync": "^2.11.1",
     "browserify": "^13.0.0",
+    "cross-env": "^5.1.1",
     "glslify": "^6.0.1",
     "gulp": "^3.9.1",
-    "gulp-uglify": "^2.0.0",
+    "gulp-minify": "^2.1.0",
     "gulp-util": "^3.0.7",
     "npm-run-all": "^1.5.2",
     "vinyl-buffer": "^1.0.0",

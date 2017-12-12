@@ -12,7 +12,7 @@ var watchify = require('watchify');
 var browserSync = require('browser-sync').create();
 var reload = browserSync.reload;
 
-var uglify = require('gulp-uglify');
+var minify = require('gulp-minify');
 
 const isProd = process.env.NODE_ENV === 'production';
 
@@ -32,7 +32,7 @@ function bundle() {
 		.on('error', logError)
 		.pipe(source('main.js'))
 		.pipe(buffer())
-		.pipe(isProd ? uglify() : gutil.noop())
+		.pipe(isProd ? minify({ ext: { min: '.min.js' }}) : gutil.noop())
 		.pipe(gulp.dest('./dist/scripts/'))
 		.pipe(reload({stream: true, once: true}));
 	return b;
