@@ -1,4 +1,5 @@
 const glslify = require('glslify');
+
 import * as THREE from 'three';
 import TrackballControls from 'three-trackballcontrols';
 
@@ -37,7 +38,7 @@ export default class WebGLView {
 	}
 
 	initObject() {
-		const geometry = new THREE.BoxGeometry(200, 200, 200);
+		const geometry = new THREE.BoxGeometry(100, 100, 100);
 		// const geometry = new THREE.PlaneGeometry(400, 400, 20, 20);
 
 		const material = new THREE.ShaderMaterial({
