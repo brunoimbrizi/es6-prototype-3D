@@ -7,8 +7,8 @@
     "prod": "cross-env NODE_ENV=production gulp"
   },
   "dependencies": {
+    "@brunoimbrizi/controlkit": "^0.1.9",
     "babel-polyfill": "^6.7.4",
-    "controlkit": "^0.1.9",
     "gsap": "^1.18.2",
     "npm-run-all": "^3.1.1",
     "sketch-js": "^1.1.1",
