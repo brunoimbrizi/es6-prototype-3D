@@ -1,4 +1,5 @@
 const glslify = require('glslify');
+import * as THREE from 'three';
 
 export default class Quad {
 

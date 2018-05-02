@@ -1,3 +1,5 @@
+import * as THREE from 'three';
+import TweenMax from 'gsap';
 import Sketch from 'sketch-js';
 
 import WebGLView from './webgl/WebGLView';
