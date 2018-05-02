@@ -1,6 +1,6 @@
 {
 	"items":
 	[
-		
+		{ "id": "track", "src": "audio/drum-loop.mp3", "body": "arrayBuffer" }
 	]
 }

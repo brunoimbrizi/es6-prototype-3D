@@ -30,10 +30,12 @@ export default class AppView {
 
 		this.sketch.update = () => {
 			// this.ui.stats.begin();
+			this.audio.update();
 			this.webgl.update();
 		};
 
 		this.sketch.draw = () => {
+			this.ui.draw();
 			this.webgl.draw();
 			// this.ui.stats.end();
 		};
@@ -57,7 +59,7 @@ export default class AppView {
 		// move canvas to container
 		document.querySelector('#container').appendChild(this.renderer.domElement);
 		
-		this.webgl = new WebGLView(this);
+		this.webgl = new WebGLView(this, this.audio);
 	}
 
 	initUI() {

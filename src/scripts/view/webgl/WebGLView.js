@@ -5,8 +5,9 @@ import TrackballControls from 'three-trackballcontrols';
 
 export default class WebGLView {
 
-	constructor(view) {
+	constructor(view, audio) {
 		this.view = view;
+		this.audio = audio;
 		this.renderer = this.view.renderer;
 
 		this.initThree();
@@ -48,8 +49,8 @@ export default class WebGLView {
 			wireframe: true
 		});
 
-		const mesh = new THREE.Mesh(geometry, material);
-		this.scene.add(mesh);
+		this.mesh = new THREE.Mesh(geometry, material);
+		this.scene.add(this.mesh);
 	}
 
 	// ---------------------------------------------------------------------------------------------
@@ -58,6 +59,9 @@ export default class WebGLView {
 
 	update() {
 		this.controls.update();
+
+		const scale = this.audio.levelsData[5] || 0.1;
+		this.mesh.scale.set(scale, scale, scale);
 	}
 
 	draw() {
