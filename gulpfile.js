@@ -1,18 +1,16 @@
-'use strict';
-
-var gulp = require('gulp');
-var gutil = require('gulp-util');
-
-var buffer = require('vinyl-buffer');
-var source = require('vinyl-source-stream')
-
-var browserify = require('browserify');
-var watchify = require('watchify');
-
-var browserSync = require('browser-sync').create();
-var reload = browserSync.reload;
-
-var minify = require('gulp-minify');
+const addModuleExports = require('babel-plugin-add-module-exports');
+const babelify = require('babelify');
+const browserify = require('browserify');
+const browserSync = require('browser-sync').create();
+const buffer = require('vinyl-buffer');
+const env = require('babel-preset-env');
+const glslify = require('glslify');
+const gulp = require('gulp');
+const gutil = require('gulp-util');
+const minify = require('gulp-minify');
+const reload = browserSync.reload;
+const source = require('vinyl-source-stream')
+const watchify = require('watchify');
 
 const isProd = process.env.NODE_ENV === 'production';
 
@@ -28,7 +26,10 @@ function logError(msg) {
 }
 
 function bundle() {
-	var b = bundler.bundle()
+	var b = bundler
+		.transform(babelify, { presets: [env], plugins: [addModuleExports] })
+		.transform(glslify)
+		.bundle()
 		.on('error', logError)
 		.pipe(source('main.js'))
 		.pipe(buffer())
